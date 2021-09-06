@@ -10,7 +10,7 @@ function init() {
     ev.preventDefault(); //to stop the page reload
     $(".section.results").show();
     let str = document.getElementById("search").value.trim();
-    let url = "http://api.openweathermap.org/data/2.5/weather?q="+str+"&appid="+ APIKEY +"&units=metric";
+    let url = "https://api.openweathermap.org/data/2.5/weather?q="+str+"&appid="+ APIKEY +"&units=metric";
     //url = url.concat(str);
     console.log(url);
     fetch(url)
