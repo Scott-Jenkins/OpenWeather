@@ -39,7 +39,7 @@ function init() {
         location.appendChild(icon); 
 
         //----------------------Sunset Sunrise-----------------------------
-
+        /*
         let sunrise_timestamp = content.sys.sunrise;
         // Create a new JavaScript Date object based on the timestamp
         // multiplied by 1000 so that the argument is in milliseconds, not seconds.
@@ -61,7 +61,7 @@ function init() {
 
         let sunset = document.querySelector("#sunset");
         sunset.textContent = content.sys.sunset;
-
+        */
         //---------------------Change Background-------------------------
         switch (weather.textContent) {
           case "Clouds":
