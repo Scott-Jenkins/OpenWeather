@@ -1,8 +1,8 @@
 APIKEY = "ea8837df503db1cc47357bc3289f366e"
 
-document.addEventListener("DOMContentLoaded", init);
+//document.addEventListener("DOMContentLoaded", init);
 
-function init() {
+//function init() {
 
   document.getElementById("btnEnter").addEventListener("click", ev => {
     ev.preventDefault(); //to stop the page reload
@@ -39,29 +39,29 @@ function init() {
         location.appendChild(icon); 
 
         //----------------------Sunset Sunrise-----------------------------
-        /*
-        let sunrise_timestamp = content.sys.sunrise;
+
+        //let sunrise_timestamp = content.sys.sunrise;
         // Create a new JavaScript Date object based on the timestamp
         // multiplied by 1000 so that the argument is in milliseconds, not seconds.
-        var sunrise_date = new sunrise_Date(sunrise_timestamp * 1000);
+        //var sunrise_date = new sunrise_date(sunrise_timestamp * 1000);
         // Hours part from the timestamp
-        var sunrise_hours = sunrise_Date.getHours();
+        //var sunrise_hours = sunrise_Date.getHours();
         // Minutes part from the timestamp
-        var sunrise_minutes = "0" + sunrise_date.getMinutes();
+        //var sunrise_minutes = "0" + sunrise_date.getMinutes();
         // Seconds part from the timestamp
-        var sunrise_seconds = "0" + sunrise_date.getSeconds();
+        //var sunrise_seconds = "0" + sunrise_date.getSeconds();
 
         // Will display time in 10:30:23 format
-        var sunrise_formattedTime = sunrise_hours + ':' + sunrise_minutes.substr(-2) + ':' + sunrise_seconds.substr(-2);
+        //var sunrise_formattedTime = sunrise_hours + ':' + sunrise_minutes.substr(-2) + ':' + sunrise_seconds.substr(-2);
 
-        let sunrise = document.querySelector("#sunrise");
-        sunrise.textContent = sunrise_formattedTime;
+        //let sunrise = document.querySelector("#sunrise");
+        //sunrise.textContent = sunrise_formattedTime;
 
         
 
-        let sunset = document.querySelector("#sunset");
-        sunset.textContent = content.sys.sunset;
-        */
+        //let sunset = document.querySelector("#sunset");
+        //sunset.textContent = content.sys.sunset;
+
         //---------------------Change Background-------------------------
         switch (weather.textContent) {
           case "Clouds":
@@ -103,7 +103,7 @@ function init() {
 
   //document.querySelector("#units").textContent = unitsValue;
 
-}
+//}
 /*
 $(".dropdown-item").click(function (e) { 
   //document.classList.remove("active");

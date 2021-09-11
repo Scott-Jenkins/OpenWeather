@@ -87,7 +87,7 @@ body .section #search {
   background: white;
   border: none;
   border-radius: 25px;
-  width: 60%;
+  width: 100%;
   padding: 5px 20px;
 }
 
@@ -131,6 +131,15 @@ body::before {
 @media only screen and (max-width: 800px) {
   body * {
     text-align: center !important;
+  }
+  body * h1 {
+    font-size: 60px !important;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  body * h1 {
+    font-size: 42px !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
