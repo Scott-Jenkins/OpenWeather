@@ -16,7 +16,6 @@
     <title>Title</title>
 </head>
 <body>
-
     <div id="overlay"></div>
 
     <div class="section padding-top">
@@ -29,19 +28,16 @@
                 </div>
 
                 <div class="col-md-12 text-center">
-                    <input type="button" value="Search" id="btnEnter" class="btn">
+                    <input type="button" value="Search" id="btnEnter" class="btn" onload="RunApi()">
+
+                    <select name="units" id="dropdownMenuButton" class="btn">
+                        <option value="°C">°C</option>
+                        <option value="°F">°F</option>
+                        <option value="°K">°K</option>
+                    </select>
                 </div>
-                <div class="dropdown" hidden>
-                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Units
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item">°C</a>
-                          <a class="dropdown-item">°F</a>
-                          <a class="dropdown-item">°K</a>
-                        </div>
-                        <label for="dropdownMenuButton" id="units"></label>
-                </div>
+
+                
                     
             </div>
         </div>
@@ -52,7 +48,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row text-center" id="location">
-                        <h1></h1><img id="icon" src="img/loading.gif">
+                        <h1><p></p></h1><img id="icon" src="img/loading.gif">
                     </div>
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-4 font-weight-bold" id="temp-low"></div>
