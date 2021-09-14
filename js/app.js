@@ -1,7 +1,7 @@
 APIKEY = "ea8837df503db1cc47357bc3289f366e"
 let units = "metric"
 
-/*
+
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -13,14 +13,16 @@ function showPosition(position) {
   let longitude = position.coords.longitude
 
   let localUrl = "http://api.openweathermap.org/data/2.5/weather?APPID=ea8837df503db1cc47357bc3289f366e&lat="+ latitude +"&lon="+ longitude +""
-  
+  console.log(localUrl)
+
   fetch(localUrl)
     .then(response => response.json())
     .then(content => {
       
-      str = content.name;
-      console.log(str);
+      console.log(content.name);
+      document.getElementById("search").value = content.name;
       RefreshApi();
+      Forecast()
     })
     .catch(err => {
       console.error(err);
@@ -29,12 +31,13 @@ function showPosition(position) {
 }
 
 getLocation()
-*/
+
 
 RunApi()
 function RunApi() {
   document.getElementById("btnEnter").addEventListener("click", ev => {
     RefreshApi()
+    
     
   });
 }
@@ -150,3 +153,34 @@ document.querySelector("#dropdownMenuButton").addEventListener("click", ev => {
       break;
   }
 });
+
+
+function Forecast() {
+  let str = document.getElementById("search").value.trim();
+  let ForecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q="+str+"&appid="+ APIKEY +"&units=" + units;
+  console.log(ForecastUrl)
+  fetch(ForecastUrl)
+    .then(response => response.json())
+    .then(content => {
+      /*
+      let getWeatherDate = content.list[0].dt
+
+      getDate = getDate * 1000
+      console.log(getDate);
+      let newDate = getDate.();
+      console.log(newDate);
+      */
+      let weatherTimestamp = content.list[0].dt;
+
+      var getWeatherDate = weatherTimestamp * 1000;
+
+      var getWeatherDate_hours = getWeatherDate.getHours();
+
+      var getWeatherDate_minutes = "0" + getWeatherDate.getMinutes();
+
+      var getWeatherDate_seconds = "0" + getWeatherDate.getSeconds();
+    })
+    .catch(err => {
+      console.error(err);
+    }); 
+}
