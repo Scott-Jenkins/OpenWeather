@@ -12,7 +12,7 @@ function showPosition(position) {
   let latitude = position.coords.latitude
   let longitude = position.coords.longitude
 
-  let localUrl = "http://api.openweathermap.org/data/2.5/weather?APPID=ea8837df503db1cc47357bc3289f366e&lat="+ latitude +"&lon="+ longitude +""
+  let localUrl = "https://api.openweathermap.org/data/2.5/weather?APPID=ea8837df503db1cc47357bc3289f366e&lat="+ latitude +"&lon="+ longitude +""
   console.log(localUrl)
 
   fetch(localUrl)
