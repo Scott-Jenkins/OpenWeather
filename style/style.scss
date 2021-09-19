@@ -5,18 +5,20 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     isolation: isolate;
-    overflow: hidden;
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     width: 100vw;
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     color:#333;
+    overflow-x: hidden;
 
     #overlay{
         position: fixed;
         width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
+        height: 100%;
         top: 0;
         right: 0;
         background: rgba(166, 255, 243, 0.521);
@@ -27,6 +29,39 @@ body{
 
         .row{
             padding-bottom:10px;
+        }
+    }
+
+    .section.forecast{
+        .container{
+            .row{
+                display: flex;
+                justify-content: center;
+
+                .col-md.text-center{
+                    background-color: #e6e6e64a;
+                    margin: 8px;
+                    border-radius: 20px;
+                    border-bottom-right-radius: 0px;
+                    padding: 20px 0px;
+                    max-width: 200px;
+                    box-shadow: 0px 10px 13px -7px #6d6d6d;
+
+                    p{
+                        margin:0;
+                    }
+
+                    hr{
+                        width:80%
+                    }
+                }
+        
+                .col-md.text-center:hover{
+                    transform: scale(1.05);
+                    transition: ease-in-out 0.2s;
+                    margin:8px 15px;
+                }
+            }
         }
     }
 
@@ -116,11 +151,11 @@ body{
             font-size:50px;
         }
 
-        
-
         .border-right{
             border-right: 1px solid #333 !important;
         }
+
+        
     }
 }
 body::before{
@@ -130,6 +165,19 @@ body::before{
         z-index: -1;
         //background: rgba(166, 255, 243, 0.521);
 }
+
+@media only screen and (max-width: 1200px) {
+    body *{
+
+        .row{
+
+            .col-md{
+                padding: 0 5px;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 800px) {
     body *{
         text-align:center !important;
