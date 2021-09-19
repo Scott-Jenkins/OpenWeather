@@ -55,7 +55,7 @@ body{
                         width:80%;
                         border: 0 !important;
                         border-top: 1px solid rgba(0,0,0,.1) !important;
-}
+
                     }
                 }
         
@@ -161,6 +161,7 @@ body{
         
     }
 }
+
 body::before{
         content: "";
         position: absolute;

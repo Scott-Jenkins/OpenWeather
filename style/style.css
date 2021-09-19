@@ -58,6 +58,8 @@ body .section.forecast .container .row .col-md.text-center p {
 
 body .section.forecast .container .row .col-md.text-center hr {
   width: 80%;
+  border: 0 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
 body .section.forecast .container .row .col-md.text-center:hover {
