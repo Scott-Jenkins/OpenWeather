@@ -1,0 +1,209 @@
+body{
+
+    background-image: url("../img/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    isolation: isolate;
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+    width: 100vw;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color:#333;
+    overflow-x: hidden;
+
+    #overlay{
+        position: fixed;
+        width: 100vw;
+        min-height: 100vh;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: rgba(166, 255, 243, 0.521);
+    }
+
+    .section.results{
+        display: none;
+
+        .row{
+            padding-bottom:10px;
+        }
+    }
+
+    .section.forecast, .section.today{
+        .container{
+
+            h2{
+                color: antiquewhite;
+                text-shadow: 2px 2px 2px rgba(206,89,55,0)
+                ;
+            }
+
+            .row{
+                display: flex;
+                justify-content: center;
+
+                .col-md.text-center{
+                    background-color: #e6e6e64a;
+                    margin: 8px;
+                    border-radius: 20px;
+                    border-bottom-right-radius: 0px;
+                    padding: 20px 0px;
+                    max-width: 200px;
+                    box-shadow: 8px 10px 13px -7px #353535a3;
+
+                    p{
+                        margin:0;
+                    }
+
+                    hr{
+                        width:80%;
+                        border: 0 !important;
+                        border-top: 1px solid rgba(0,0,0,.1) !important;
+                        margin:1rem auto;
+
+                    }
+                }
+        
+                .col-md.text-center:hover{
+                    transform: scale(1.05);
+                    transition: ease-in-out 0.2s;
+                    margin:8px 15px;
+                }
+            }
+        }
+    }
+
+    .section{
+        padding:20px 0 0;
+
+        #dropdownMenuButton{
+            padding: 0;
+
+            .dropdown-menu{
+                min-width: auto;
+                background: none;
+                border:none;
+                
+
+                option:hover{
+                    background: none;
+                }
+
+            }
+        }
+
+        .container{
+            width: 100%;
+        }
+        
+        h1{
+            margin: auto;
+            font-size: 100px;
+            padding-bottom:10px;
+            position:relative;
+            left: 20px;
+            display: flex;
+
+            
+            #icon{
+                //position:relative;
+                //bottom: 60px;
+                //left: 20px;
+                height: fit-content;
+            }
+            
+        }
+
+        .btn{
+            border: white solid 2px;   
+            border-radius: 10px;   
+            padding: 5px 20px;  
+            margin: 20px 5px;
+            color: white;
+            min-height: 38px;
+        }
+
+        
+
+        .btn:hover{
+            color: #333;
+            background-color: white;
+            transition: 0.4s ease-in-out; 
+        }
+
+        #search{
+            background:white;
+            border: none;
+            border-radius: 25px;
+            width: 100%;
+            padding: 5px 20px;
+        }
+
+        #search:focus-visible, .btn:focus-visible, .btn:focus{
+            outline:none;
+        }
+
+        .text-muted{
+            margin: auto;
+        }
+
+        #temp-low{
+            text-align: right;
+        }
+
+        #temp-high{
+            text-align: left;
+        }
+
+        #temp-low, #temp-high{
+            font-size:50px;
+        }
+
+        .border-right{
+            border-right: 1px solid #333 !important;
+        }
+
+        
+    }
+}
+
+body::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        //background: rgba(166, 255, 243, 0.521);
+}
+
+@media only screen and (max-width: 1200px) {
+    body *{
+
+        .row{
+
+            .col-md{
+                padding: 0 5px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    body *{
+        text-align:center !important;
+
+        h1{
+            font-size:60px !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    body *{
+        h1{
+            font-size:42px !important;
+        }
+    }
+}

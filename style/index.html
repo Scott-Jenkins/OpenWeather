@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+    <div id="overlay"></div>
+
+    <div class="section padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <label for="search">Location:</label><br>
+                    <input type="text" name="" id="search" class="">
+                    
+                </div>
+
+                <div class="col-md-12 text-center">
+                    <input type="button" value="Search" id="btnEnter" class="btn" onload="RunApi()">
+
+                    <select name="units" id="dropdownMenuButton" class="btn">
+                        <option value="°C">°C</option>
+                        <option value="°F">°F</option>
+                        <option value="°K">°K</option>
+                    </select>
+                </div>
+
+                
+                    
+            </div>
+        </div>
+    </div>
+
+    <div class="section results">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row text-center" id="location">
+                        <h1><p></p></h1><img id="icon" src="img/loading.gif">
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-4 font-weight-bold" id="temp-low"></div>
+                        <div class="col-md-4 text-center text-muted">to</div>
+                        <div class="col-md-4 font-weight-bold" id="temp-high"></div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6 text-center" id="weather"></div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6 text-center" id="feels-like"></div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6 text-center" id="humidity"></div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-6 border-right" id="sunrise"></div>
+                        <div class="col-md-6" id="sunset"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section today">
+        <div class="container">
+            <h2>Later Today...</h2>
+            <div class="row text-center">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="section forecast">
+        <div class="container">
+            <h2>Later This Week...</h2>
+            <div class="row text-center">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
