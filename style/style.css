@@ -32,7 +32,12 @@ body .section.results .row {
   padding-bottom: 10px;
 }
 
-body .section.forecast .container .row {
+body .section.forecast .container h2, body .section.today .container h2 {
+  color: antiquewhite;
+  text-shadow: 2px 2px 2px rgba(206, 89, 55, 0);
+}
+
+body .section.forecast .container .row, body .section.today .container .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,28 +46,29 @@ body .section.forecast .container .row {
           justify-content: center;
 }
 
-body .section.forecast .container .row .col-md.text-center {
+body .section.forecast .container .row .col-md.text-center, body .section.today .container .row .col-md.text-center {
   background-color: #e6e6e64a;
   margin: 8px;
   border-radius: 20px;
   border-bottom-right-radius: 0px;
   padding: 20px 0px;
   max-width: 200px;
-  -webkit-box-shadow: 0px 10px 13px -7px #6d6d6d;
-          box-shadow: 0px 10px 13px -7px #6d6d6d;
+  -webkit-box-shadow: 8px 10px 13px -7px #353535a3;
+          box-shadow: 8px 10px 13px -7px #353535a3;
 }
 
-body .section.forecast .container .row .col-md.text-center p {
+body .section.forecast .container .row .col-md.text-center p, body .section.today .container .row .col-md.text-center p {
   margin: 0;
 }
 
-body .section.forecast .container .row .col-md.text-center hr {
+body .section.forecast .container .row .col-md.text-center hr, body .section.today .container .row .col-md.text-center hr {
   width: 80%;
   border: 0 !important;
   border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  margin: 1rem auto;
 }
 
-body .section.forecast .container .row .col-md.text-center:hover {
+body .section.forecast .container .row .col-md.text-center:hover, body .section.today .container .row .col-md.text-center:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   -webkit-transition: ease-in-out 0.2s;

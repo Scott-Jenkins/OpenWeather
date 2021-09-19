@@ -45,6 +45,8 @@ function RefreshApi(UnitAppend = "°C") {
   let str = document.getElementById("search").value.trim();
   $(".section.results").show();
   let url = "https://api.openweathermap.org/data/2.5/weather?q="+str+"&appid="+ APIKEY +"&units=" + units;
+  Forecast(units, UnitAppend);
+
   fetch(url)
     .then(response => response.json())
     .then(content => {
@@ -131,7 +133,7 @@ document.querySelector("#dropdownMenuButton").addEventListener("click", ev => {
 });
 
 
-function Forecast(units = "metric", unitsAppend = "°C") {
+function Forecast(units = "metric", UnitAppend = "°C") {
   let str = document.getElementById("search").value.trim();
   let ForecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q="+str+"&appid="+ APIKEY +"&units=" + units;
   fetch(ForecastUrl)
@@ -139,7 +141,44 @@ function Forecast(units = "metric", unitsAppend = "°C") {
     .then(content => {
 
       var forecastArea = document.querySelector(".section.forecast .container .row")
+      var forecastToday = document.querySelector(".section.today .container .row")
       forecastArea.innerHTML = ''
+      forecastToday.innerHTML = ''
+      
+      for (let index = 0; index < 4; index = index + 1) {
+
+        let timeStamp = content.list[index].dt;
+
+        let date = new Date(timeStamp*1000);
+
+        // Month
+        var months_arr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        var month =  months_arr[date.getMonth()];
+
+        // Day
+        var day = date.getDate();
+
+        var hour = date.getHours();
+
+        if (hour < 10) {
+          hour = '0' + hour
+        }
+
+        let temp = Math.trunc(content.list[index].main.temp);
+        let weather = content.list[index].weather[0].main;
+
+        let icon = "http://openweathermap.org/img/wn/"+ content.list[index].weather[0].icon + ".png";
+
+
+        
+
+        
+        var newDay = document.createElement("div")
+        newDay.className = "col-md text-center"
+        newDay.innerHTML = '<p>'+ temp + UnitAppend +'</p><img src='+ icon +'><hr><p>'+ weather +'</p><p><b>'+ hour +':00</b></p>'
+        forecastToday.appendChild(newDay)
+      }
+      
 
       for (let index = 8; index < 40; index = index + 8) {
 
@@ -166,7 +205,7 @@ function Forecast(units = "metric", unitsAppend = "°C") {
         
         var newDay = document.createElement("div")
         newDay.className = "col-md text-center"
-        newDay.innerHTML = '<p>'+ temp + unitsAppend +'</p><img src='+ icon +'><hr><p>'+ weather +'</p><p><b>'+ day +' '+ month +'</b></p>'
+        newDay.innerHTML = '<p>'+ temp + UnitAppend +'</p><img src='+ icon +'><hr><p>'+ weather +'</p><p><b>'+ day +' '+ month +'</b></p>'
         forecastArea.appendChild(newDay)
       }
 

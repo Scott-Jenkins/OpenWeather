@@ -32,8 +32,15 @@ body{
         }
     }
 
-    .section.forecast{
+    .section.forecast, .section.today{
         .container{
+
+            h2{
+                color: antiquewhite;
+                text-shadow: 2px 2px 2px rgba(206,89,55,0)
+                ;
+            }
+
             .row{
                 display: flex;
                 justify-content: center;
@@ -45,7 +52,7 @@ body{
                     border-bottom-right-radius: 0px;
                     padding: 20px 0px;
                     max-width: 200px;
-                    box-shadow: 0px 10px 13px -7px #6d6d6d;
+                    box-shadow: 8px 10px 13px -7px #353535a3;
 
                     p{
                         margin:0;
@@ -55,6 +62,7 @@ body{
                         width:80%;
                         border: 0 !important;
                         border-top: 1px solid rgba(0,0,0,.1) !important;
+                        margin:1rem auto;
 
                     }
                 }
