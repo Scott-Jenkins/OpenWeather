@@ -32,9 +32,10 @@ body .section.results .row {
   padding-bottom: 10px;
 }
 
-body .section.forecast .container h2, body .section.today .container h2 {
-  color: antiquewhite;
-  text-shadow: 2px 2px 2px rgba(206, 89, 55, 0);
+body .section.forecast .container .col-md-12, body .section.today .container .col-md-12 {
+  color: white;
+  text-shadow: 8px 10px 13px #353535a3;
+  padding: 0;
 }
 
 body .section.forecast .container .row, body .section.today .container .row {
@@ -143,6 +144,10 @@ body .section #search:focus-visible, body .section .btn:focus-visible, body .sec
   outline: none;
 }
 
+body .section #search::after {
+  content: \f3c5;
+}
+
 body .section .text-muted {
   margin: auto;
 }
@@ -161,6 +166,10 @@ body .section #temp-low, body .section #temp-high {
 
 body .section .border-right {
   border-right: 1px solid #333 !important;
+}
+
+body .section:last-of-type {
+  margin-bottom: 30px;
 }
 
 body::before {
